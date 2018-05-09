@@ -14,7 +14,7 @@ while Flag == 1 :
     chatrespone = chatbot.get_response(answer)
     print(chatrespone)
     yn =  input("is the answer correct ? 1 for yes 2 for no")
-    if yn == 2 :
+    if yn == 1 :
         trainanswer = input("What shoule be the right answer")
         chatbot.train(answer, "Bounjour!")
 # Get a response to an input statement
