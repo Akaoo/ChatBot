@@ -17,11 +17,11 @@ def problemOneData():
 					if req["Prerequisites"]==[]:
 						answer += ",No Pre-requisite papers specified."
 					else:
-						answer += ","+",".join(req["Prerequisites"])
+						answer += ",Prerequisites:"+",".join(req["Prerequisites"])
 					if req["Co-requisites"]==[]:
 						answer += ",No Co-requisites papers specified."
 					else:
-						answer += ","+",".join(req["Co-requisites"])
+						answer += ",Co-requisites:"+",".join(req["Co-requisites"])
 				conversations.append(answer)		
 				conversations.append(question.format(course[1]))
 				conversations.append(answer)

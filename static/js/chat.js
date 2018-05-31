@@ -30,13 +30,14 @@ $(function(){
 	$('.footer p').click(function(){
 		show("static/images/touxiangm.png",$(this).prev().val());
 		$.ajax({  
-		     url: 'http://47.104.157.19:8080//chat',  // 请求地址
+		     url: 'http://52.14.49.96:5000/chat',  // 请求地址
 			 data: {"question": JSON.stringify($(this).prev().val())},  // 传输数据
 			 success:function(res,status){  // 请求成功的回调函数
-			 	test([res.replate('"',"")]);
-			 	console.log(res)
+			 	console.log(36);
+			 	test([res]);
+			 	console.log(res);
 			 },
-			 error: function(error) {}  // 请求失败的回调函数
+			 error: function(error) {console.log(error)}  // 请求失败的回调函数
 		});
 	})
 })

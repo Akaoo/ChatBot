@@ -4,11 +4,12 @@ from chatterbot import ChatBot
 from chatterbot.trainers import ListTrainer
 
 
+
+
 conversation = problemOneData()+problemTwoData()+problemThreeData()+problemFourData()+problemFiveData()+problemSixData()
 chatbot = ChatBot("Robot")
 chatbot.set_trainer(ListTrainer)
 chatbot.train(conversation)
-
 
 app = Flask(__name__)
 
@@ -20,8 +21,7 @@ def index():
 @app.route("/chat")
 def chat():
 	question = request.args.get("question")
-	print(question)
-	return chatbot.get_response(question) 
+	return str(chatbot.get_response(question)) 
 
 if __name__ == '__main__':
-	app.run("0.0.0.0")
+	app.run("0.0.0.0",port=5000,debug=True)
